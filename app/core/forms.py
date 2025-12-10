@@ -2,13 +2,13 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-
 User = get_user_model()
 
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all required fields,
     plus a repeated password."""
+
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(
         label="Password confirmation", widget=forms.PasswordInput
@@ -36,6 +36,7 @@ class UserCreationForm(forms.ModelForm):
 class UserChangeForm(forms.ModelForm):
     """A form for updating users. Replaces the password field with
     admin's password hash display field."""
+
     password = ReadOnlyPasswordHashField()
 
     class Meta:
@@ -44,5 +45,3 @@ class UserChangeForm(forms.ModelForm):
 
     def clean_password(self):
         return self.initial["password"]
-
-

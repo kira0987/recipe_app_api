@@ -4,3 +4,13 @@ exclude =
     __pycache__,
     manage.py,
     settings.py
+
+extend-ignore =
+    E203,  # Black compatibility
+    W503,
+    F401,
+    F403,
+    F405,
+    E501,
+max-line-length = 88
+

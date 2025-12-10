@@ -4,6 +4,7 @@ We include a tiny, self-contained implementation here so tests can import
 `app_two.views.remove_duplicates` without relying on imports across sibling
 packages. The function preserves the order of first occurrences.
 """
+
 from typing import Iterable, List, TypeVar
 
 T = TypeVar("T")
